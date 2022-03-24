@@ -1,11 +1,10 @@
-const router = require("express").Router();
-const User = require("../models/User");
+const User = require("../models/user.model");
 const bcrypt = require("bcrypt");
 const logger = require("../utils/Logging");
 const { createToken } = require("../utils/jwt");
 const { sendError } = require("../utils/utils");
 
-router.post("/signup", async (req, res) => {
+const signup = async (req, res) => {
   const { username, email, password } = req.body;
   try {
     const hashedPassword = bcrypt.hashSync(password, 10);
@@ -33,9 +32,9 @@ router.post("/signup", async (req, res) => {
     logger("error", e);
     return sendError(500, e, res);
   }
-});
+};
 
-router.post("/login", (req, res) => {
+const login = (req, res) => {
   const { email, password } = req.body;
   User.findOne({ email })
     .then((user) => {
@@ -46,6 +45,9 @@ router.post("/login", (req, res) => {
       res.json(createToken(user));
     })
     .catch((err) => res.json(err) && logger("error", err));
-});
+};
 
-module.exports.userRouter = router;
+module.exports = {
+  signup,
+  login,
+};
