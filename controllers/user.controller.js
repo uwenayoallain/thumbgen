@@ -24,10 +24,8 @@ const signup = async (req, res) => {
     });
     if (validationErrors) return res.status(400).send(validationErrors);
     await user.save();
-    const token = createToken(user.toJSON());
     return res.status(201).json({
       message: "User created successfully",
-      token,
     });
   } catch (e) {
     logger("error", e);
@@ -43,7 +41,7 @@ const login = (req, res) => {
         return res.status(400).json({ message: "Email does not exist" });
       if (!user.checkPassword(password))
         return res.status(400).json({ message: "Password is incorrect" });
-      res.json(createToken(user));
+      res.json(createToken(user.toJSON()));
     })
     .catch((err) => res.json(err) && logger("error", err));
 };

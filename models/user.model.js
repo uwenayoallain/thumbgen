@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
+const bcrypt = require("bcrypt");
 
 const UserSchema = new mongoose.Schema(
   {
@@ -31,6 +32,9 @@ UserSchema.methods.validationErrors = async function (obj) {
   });
   const { error } = schema.validate(obj);
   return error;
+};
+UserSchema.methods.checkPassword = function (password) {
+  return bcrypt.compareSync(password, this.password);
 };
 
 const User = mongoose.model("User", UserSchema);
