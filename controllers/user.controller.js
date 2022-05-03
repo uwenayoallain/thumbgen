@@ -6,6 +6,7 @@ const { sendError } = require("../utils/utils");
 
 const signup = async (req, res) => {
   const { username, email, password } = req.body;
+  console.log(req.body);
   try {
     const hashedPassword = bcrypt.hashSync(password, 10);
     if (await User.findOne({ username })) {
