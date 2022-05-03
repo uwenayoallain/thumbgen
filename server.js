@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const userRoutes = require("./routes/user.route");
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 require("dotenv").config({ path: ".env" });
 require("./utils/dbConnect")();
 const app = express();

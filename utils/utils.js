@@ -3,11 +3,11 @@ const resp = (code, message, res, type = "Error", restype = "json") => {
 };
 
 const sendError = (code, e, res) => {
-  return resp(code, e, res);
+  return res.status(code).json({ type: "Error", message: e });
 };
 
-const sendMessage = (code, message, res) => {
-  return resp(code, message, res);
+const sendMessage = (code, message, res, payload) => {
+  return res.status(code).json({ type: "Success", message, payload });
 };
 
 module.exports = {

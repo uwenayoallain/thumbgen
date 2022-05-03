@@ -2,15 +2,22 @@ const User = require("../models/user.model");
 const bcrypt = require("bcrypt");
 const logger = require("../utils/Logging");
 const { createToken } = require("../utils/jwt");
-const { sendError } = require("../utils/utils");
+const { sendError, sendMessage } = require("../utils/utils");
+const _ = require("lodash");
 
 const signup = async (req, res) => {
-  const { username, email, password } = req.body;
-  console.log(req.body);
+  const { username, email, password } = _.pick(req.body, [
+    "username",
+    "email",
+    "password",
+  ]);
+  if (!username || !email || !password)
+    return sendError(500, "Missing required fields", res);
   try {
     const hashedPassword = bcrypt.hashSync(password, 10);
-    if (await User.findOne({ username })) {
-      return sendError(400, "Username already exists", res);
+
+    if ((await User.findOne({ username })) || (await User.findOne({ email }))) {
+      return sendError(500, "User already exists", res);
     }
     const user = new User({
       username,
@@ -22,11 +29,9 @@ const signup = async (req, res) => {
       email,
       password,
     });
-    if (validationErrors) return res.status(400).send(validationErrors);
+    if (validationErrors) return sendError(500, validationErrors, res);
     await user.save();
-    return res.status(201).json({
-      message: "User created successfully",
-    });
+    return sendMessage(201, "User created successfully", res);
   } catch (e) {
     logger("error", e);
     return sendError(500, e, res);
@@ -34,16 +39,25 @@ const signup = async (req, res) => {
 };
 
 const login = (req, res) => {
-  const { email, password } = req.body;
+  const { email, password } = _.pick(req.body, ["email", "password"]);
+  if (!email || !password)
+    return sendError(500, "Missing required fields", res);
   User.findOne({ email })
     .then((user) => {
-      if (!user)
-        return res.status(400).json({ message: "Email does not exist" });
+      if (!user) return sendError(500, "User not found", res);
       if (!user.checkPassword(password))
-        return res.status(400).json({ message: "Password is incorrect" });
-      res.json(createToken(user.toJSON()));
+        return sendError(500, "Incorrect password", res);
+      return sendMessage(
+        200,
+        "User logged in succcessfully",
+        res,
+        createToken(user.toJSON())
+      );
     })
-    .catch((err) => res.json(err) && logger("error", err));
+    .catch((e) => {
+      logger("error", e);
+      return sendError(500, e, res);
+    });
 };
 
 module.exports = {
