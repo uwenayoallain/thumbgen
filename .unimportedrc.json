@@ -1,0 +1,8 @@
+{
+  "ignoreUnresolved": [],
+  "ignoreUnused": ["chai", "chai-http", "mocha", "nodemon"],
+  "ignoreUnimported": [
+    "C:/programs/hackerbay/backend/middlewares/auth.middleware.js",
+    "C:/programs/hackerbay/backend/server.js"
+  ]
+}
