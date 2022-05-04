@@ -1,0 +1,34 @@
+{
+  "name": "uwenayoallain_backend",
+  "version": "1.0.0",
+  "description": "a simple backend system for hackerbay.io",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "nyc mocha --timeout=10000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bunyan": "^1.8.15",
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mocha": "^9.2.2",
+    "mongoose": "^6.2.7",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "swagger-ui-express": "^4.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "nyc": "^15.1.0"
+  }
+}
