@@ -6,9 +6,7 @@ function connection() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
-    .then(() => {
-      logger("info", "Connected to database");
-    })
+    .then(() => {})
     .catch((err) => {
       logger("error", err);
     });

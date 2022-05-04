@@ -36,7 +36,5 @@ if (process.env.NODE_ENV === "development") {
 }
 app.use(express.json({ extended: true }));
 app.use("/user", userRoutes);
-app.listen(port, () => {
-  console.log("Server started on port " + port);
-});
+app.listen(port);
 module.exports = app;

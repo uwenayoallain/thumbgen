@@ -1,3 +1,4 @@
+process.env.NODE_ENV = "test";
 let { describe, before, it } = require("mocha");
 let chai = require("chai");
 let http = require("chai-http");
