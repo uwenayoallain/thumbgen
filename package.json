@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "test": "mocha"
+    "test": "nyc mocha --timeout=10000"
   },
   "keywords": [],
   "author": "",
@@ -27,5 +27,9 @@
     "nodemon": "^2.0.15",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "nyc": "^15.1.0"
   }
 }
