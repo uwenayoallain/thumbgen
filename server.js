@@ -7,8 +7,11 @@ const port = process.env.PORT || 3000;
 require("dotenv").config({ path: ".env" });
 require("./utils/dbConnect")();
 const app = express();
-const swaggerDocs = require("./swagger.json");
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+app.use(
+  "/api-docs",
+  swaggerUi.serve,
+  swaggerUi.setup(require("./swagger.json"))
+);
 app.use(cors());
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
