@@ -1,1 +1,26 @@
-{"parent":null,"pid":13452,"argv":["C:\\Program Files\\nodejs\\node.exe","C:\\programs\\hackerbay\\backend\\node_modules\\mocha\\bin\\mocha","--timeout=10000"],"execArgv":[],"cwd":"C:\\programs\\hackerbay\\backend","time":1651687284396,"ppid":12408,"coverageFilename":"C:\\programs\\hackerbay\\backend\\.nyc_output\\933be682-b53e-4944-bb34-8313db2dca75.json","externalId":"","uuid":"933be682-b53e-4944-bb34-8313db2dca75","files":["C:\\programs\\hackerbay\\backend\\server.js","C:\\programs\\hackerbay\\backend\\routes\\user.route.js","C:\\programs\\hackerbay\\backend\\controllers\\user.controller.js","C:\\programs\\hackerbay\\backend\\models\\user.model.js","C:\\programs\\hackerbay\\backend\\utils\\Logging.js","C:\\programs\\hackerbay\\backend\\utils\\jwt.js","C:\\programs\\hackerbay\\backend\\utils\\utils.js","C:\\programs\\hackerbay\\backend\\utils\\dbConnect.js"]}
+{
+  "parent": null,
+  "pid": 13452,
+  "argv": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\programs\\hackerbay\\backend\\node_modules\\mocha\\bin\\mocha",
+    "--timeout=10000"
+  ],
+  "execArgv": [],
+  "cwd": "C:\\programs\\hackerbay\\backend",
+  "time": 1651687284396,
+  "ppid": 12408,
+  "coverageFilename": "C:\\programs\\hackerbay\\backend\\.nyc_output\\933be682-b53e-4944-bb34-8313db2dca75.json",
+  "externalId": "",
+  "uuid": "933be682-b53e-4944-bb34-8313db2dca75",
+  "files": [
+    "C:\\programs\\hackerbay\\backend\\server.js",
+    "C:\\programs\\hackerbay\\backend\\routes\\user.route.js",
+    "C:\\programs\\hackerbay\\backend\\controllers\\user.controller.js",
+    "C:\\programs\\hackerbay\\backend\\models\\user.model.js",
+    "C:\\programs\\hackerbay\\backend\\utils\\Logging.js",
+    "C:\\programs\\hackerbay\\backend\\utils\\jwt.js",
+    "C:\\programs\\hackerbay\\backend\\utils\\utils.js",
+    "C:\\programs\\hackerbay\\backend\\utils\\dbConnect.js"
+  ]
+}
