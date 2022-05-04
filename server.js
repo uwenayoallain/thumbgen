@@ -7,7 +7,6 @@ const port = process.env.PORT || 3000;
 require("dotenv").config({ path: ".env" });
 require("./utils/dbConnect")();
 const app = express();
-// convert swagger.json into swaggerUi documentation
 const swaggerDocs = require("./swagger.json");
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use(cors());
