@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "test": "npx nyc@latest --response-format=json-summary mocha --timeout=10000",
-    "coverage:badge": "coverage-badge-creator"
+    "coverage:badge": "coverage-badge-creator",
+    "test": "npx nyc@latest --response-format=json-summary mocha --timeout=10000 --exit && npm run coverage:badge"
   },
   "keywords": [],
   "author": "",
