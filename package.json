@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "test": "nyc --reporter=json-summary mocha --timeout=10000",
+    "test": "npx nyc@latest --response-format=json-summary mocha --timeout=10000",
     "coverage:badge": "coverage-badge-creator"
   },
   "keywords": [],
