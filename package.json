@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "test": "nyc mocha --timeout=10000"
+    "test": "nyc --reporter=json-summary mocha --timeout=10000",
+    "coverage:badge": "coverage-badge-creator"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +29,7 @@
     "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
+    "coverage-badge-creator": "^1.0.11",
     "eslint": "^8.14.0",
     "nyc": "^15.1.0"
   }
