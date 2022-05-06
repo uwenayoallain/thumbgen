@@ -68,8 +68,15 @@ const patch = (req, res) => {
   const patchedJson = jsonPatch.apply_patch(json, patch);
   return sendMessage(200, "Patched successfully", res, patchedJson);
 };
+
+const generateThumbnail = (req, res) => {
+  const { url } = _.pick(req.body, ["url"]);
+  if (!url) return sendError(500, "Missing required fields", res);
+}
+
 module.exports = {
   signup,
   login,
   patch,
+  generateThumbnail,
 };
