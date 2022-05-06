@@ -72,7 +72,7 @@ const patch = (req, res) => {
 const generateThumbnail = (req, res) => {
   const { url } = _.pick(req.body, ["url"]);
   if (!url) return sendError(500, "Missing required fields", res);
-}
+};
 
 module.exports = {
   signup,
