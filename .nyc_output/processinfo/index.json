@@ -1,1 +1,32 @@
-{"processes":{"57b10272-19b9-4f66-bfba-2a56db629c68":{"parent":null,"children":[]}},"files":{"C:\\programs\\hackerbay\\backend\\server.js":["57b10272-19b9-4f66-bfba-2a56db629c68"],"C:\\programs\\hackerbay\\backend\\routes\\user.route.js":["57b10272-19b9-4f66-bfba-2a56db629c68"],"C:\\programs\\hackerbay\\backend\\controllers\\user.controller.js":["57b10272-19b9-4f66-bfba-2a56db629c68"],"C:\\programs\\hackerbay\\backend\\models\\user.model.js":["57b10272-19b9-4f66-bfba-2a56db629c68"],"C:\\programs\\hackerbay\\backend\\utils\\Logging.js":["57b10272-19b9-4f66-bfba-2a56db629c68"],"C:\\programs\\hackerbay\\backend\\utils\\jwt.js":["57b10272-19b9-4f66-bfba-2a56db629c68"],"C:\\programs\\hackerbay\\backend\\utils\\utils.js":["57b10272-19b9-4f66-bfba-2a56db629c68"],"C:\\programs\\hackerbay\\backend\\utils\\dbConnect.js":["57b10272-19b9-4f66-bfba-2a56db629c68"]},"externalIds":{}}
+{
+  "processes": {
+    "57b10272-19b9-4f66-bfba-2a56db629c68": { "parent": null, "children": [] }
+  },
+  "files": {
+    "C:\\programs\\hackerbay\\backend\\server.js": [
+      "57b10272-19b9-4f66-bfba-2a56db629c68"
+    ],
+    "C:\\programs\\hackerbay\\backend\\routes\\user.route.js": [
+      "57b10272-19b9-4f66-bfba-2a56db629c68"
+    ],
+    "C:\\programs\\hackerbay\\backend\\controllers\\user.controller.js": [
+      "57b10272-19b9-4f66-bfba-2a56db629c68"
+    ],
+    "C:\\programs\\hackerbay\\backend\\models\\user.model.js": [
+      "57b10272-19b9-4f66-bfba-2a56db629c68"
+    ],
+    "C:\\programs\\hackerbay\\backend\\utils\\Logging.js": [
+      "57b10272-19b9-4f66-bfba-2a56db629c68"
+    ],
+    "C:\\programs\\hackerbay\\backend\\utils\\jwt.js": [
+      "57b10272-19b9-4f66-bfba-2a56db629c68"
+    ],
+    "C:\\programs\\hackerbay\\backend\\utils\\utils.js": [
+      "57b10272-19b9-4f66-bfba-2a56db629c68"
+    ],
+    "C:\\programs\\hackerbay\\backend\\utils\\dbConnect.js": [
+      "57b10272-19b9-4f66-bfba-2a56db629c68"
+    ]
+  },
+  "externalIds": {}
+}
