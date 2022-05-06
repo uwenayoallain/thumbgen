@@ -4,6 +4,7 @@ const logger = require("../utils/Logging");
 const { createToken } = require("../utils/jwt");
 const { sendError, sendMessage } = require("../utils/utils");
 const _ = require("lodash");
+const jsonPatch = require("jsonpatch");
 
 const signup = async (req, res) => {
   const { username, email, password } = _.pick(req.body, [
@@ -60,7 +61,15 @@ const login = (req, res) => {
     });
 };
 
+const patch = (req, res) => {
+  // apply json patch
+  const { json, patch } = _.pick(req.body, ["json", "patch"]);
+  if (!json || !patch) return sendError(500, "Missing required fields", res);
+  const patchedJson = jsonPatch.apply_patch(json, patch);
+  return sendMessage(200, "Patched successfully", res, patchedJson);
+};
 module.exports = {
   signup,
   login,
+  patch,
 };
