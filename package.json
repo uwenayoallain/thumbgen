@@ -7,7 +7,7 @@
     "start": "nodemon server.js",
     "coverage:badge": "coverage-badge-creator",
     "test": "mocha --timeout=10000 --exit",
-    "coverage": "nyc report --reporter=json-summary && npm run coverage:badge"
+    "coverage": "nyc report --reporter=json-summary"
   },
   "keywords": [],
   "author": "",

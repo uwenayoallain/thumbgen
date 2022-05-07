@@ -53,4 +53,44 @@ describe("Users", () => {
         });
     });
   });
+  describe("POST user/login", () => {
+    it("it should not login a user without a password", (done) => {
+      let user = {
+        email: "username@example.com",
+      };
+      chai
+        .request(server)
+        .post("/user/login")
+        .send(user)
+        .end((err, res) => {
+          expect(res).to.have.status(500);
+          expect(res).to.be.json;
+          expect(res.body)
+            .to.have.property("message")
+            .equals("Missing required fields");
+          expect(res.body).to.have.property("type").equals("Error");
+          done();
+        });
+    });
+    it("it should login a user with all fields", (done) => {
+      let user = {
+        email: "username@example.com",
+        password: "Yarrisongmail.com@123!",
+      };
+
+      chai
+        .request(server)
+        .post("/user/login")
+        .send(user)
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          expect(res.body)
+            .to.have.property("message")
+            .equals("User logged in succcessfully");
+          expect(res.body).to.have.property("type").equals("Success");
+          expect(res.body).to.have.property("token").is.a("string");
+          done();
+        });
+    });
+  });
 });
