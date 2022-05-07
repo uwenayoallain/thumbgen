@@ -101,6 +101,59 @@
           }
         }
       }
+    },
+    "/user/patch": {
+      "post": {
+        "description": "Patch a json object",
+        "operationId": "patchObject",
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "The json object to be patched",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            },
+            "example": {
+              "json": {
+                "bar": "qux",
+                "foo": "bar"
+              }
+            }
+          },
+          {
+            "name": "patch",
+            "in": "body",
+            "description": "The patch object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            },
+            "example": {
+              "patch": {
+                "op": "replace",
+                "path": "/bar",
+                "value": "baz"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "patch succeessful"
+          },
+          "400": {
+            "description": "error response"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "default": {
+            "description": "unexpected error"
+          }
+        }
+      }
     }
   },
   "definitions": {
