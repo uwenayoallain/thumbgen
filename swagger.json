@@ -17,27 +17,21 @@
             "in": "body",
             "description": "The username of the user",
             "required": true,
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
+            "example": "username123"
           },
           {
             "name": "password",
             "in": "body",
             "description": "The password of the user",
             "required": true,
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
+            "example": "password123@333"
           },
           {
             "name": "email",
             "in": "body",
             "description": "The email of the user",
             "required": true,
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
+            "example": "example@gmail.com"
           }
         ],
         "responses": {
@@ -66,24 +60,14 @@
             "in": "body",
             "description": "The username of the user",
             "required": true,
-            "schema": {
-              "$ref": "#/definitions/User"
-            },
-            "example": {
-              "username": "John Doe"
-            }
+            "example": "John Doe"
           },
           {
             "name": "password",
             "in": "body",
             "description": "The password of the user",
             "required": true,
-            "schema": {
-              "$ref": "#/definitions/User"
-            },
-            "example": {
-              "password": "Tester@123!psw"
-            }
+            "example": "123456"
           }
         ],
         "responses": {
@@ -112,14 +96,9 @@
             "in": "body",
             "description": "The json object to be patched",
             "required": true,
-            "schema": {
-              "$ref": "#/definitions/User"
-            },
             "example": {
-              "json": {
-                "bar": "qux",
-                "foo": "bar"
-              }
+              "bar": "qux",
+              "foo": "bar"
             }
           },
           {
@@ -127,15 +106,10 @@
             "in": "body",
             "description": "The patch object",
             "required": true,
-            "schema": {
-              "$ref": "#/definitions/User"
-            },
             "example": {
-              "patch": {
-                "op": "replace",
-                "path": "/bar",
-                "value": "baz"
-              }
+              "op": "replace",
+              "path": "/bar",
+              "value": "baz"
             }
           }
         ],
@@ -161,13 +135,9 @@
       "type": "object",
       "allOf": [
         {
-          "required": ["Email", "Password", "UserName"],
+          "required": ["Email", "Password", "username"],
           "properties": {
-            "id": {
-              "type": "integer",
-              "format": "int64"
-            },
-            "UserName": {
+            "username": {
               "type": "string"
             },
             "Email": {
